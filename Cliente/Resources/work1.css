@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+	font-size: 16px;
+	font-family: Helvetica;
+	background-image: url("https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=wood-dark-banner-163999.jpg&fm=jpg");
+	background-color: beige;
+	background-repeat: repeat-y;
+	background-size: cover;
+}
+
+p {
+	font-size: 25px;
+}
+
+{--
+h1 {
+	text-align: center;
+}
+--}
+
+h2 {
+	text-align: center;
+	font-size: 23px;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vh;
+    height: 30vh;
+}
+
+table {
+	margin-top: 2%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.menuoptions{
+	position: absolute;
+	top:30%;
+	width: 60%;
+	height: 70%;
+	font-size: 6vmin;
+	left: 20.5%;
+	text-align: center;
+	color: white;
+	-webkit-text-stroke: 2px black;
+	line-height: 1.5;
+}
+
+.hoverset:hover {
+	color: gold;
+	-webkit-text-stroke: 2px black;
+	cursor: pointer;
+}
