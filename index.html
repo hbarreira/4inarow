@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang= "pt">
+	<head>
+		<link rel="stylesheet" type="text/css" href="Cliente/Resources/work1.css">
+		<link rel="stylesheet" type="text/css" href="Cliente/Resources/work2.css">
+		<script src="Cliente/Resources/script1.js"></script>
+		<script src="Cliente/Resources/scipt2.js"></script>
+		<script src="Cliente/Resources/script3.js"></script>
+		<meta charset="UTF-8">
+		<title>4 in a Row</title>
+		<link rel="icon" href="https://is5-ssl.mzstatic.com/image/thumb/Purple1/v4/cc/43/0b/cc430b6f-cbae-2eb6-931e-fb1687f106e6/source/256x256bb.jpg" type="image/png">
+	</head>
+	
+	<body>	
+	<br>
+	<h1><img id="imglogo" src="https://stuntsoftware.com/img/4inarow/title.png" alt="logo"></h1>
+
+
+	<!-- Menu -->
+		<div id="menuoptions" class="menuoptions">
+			<b>
+			<br>
+			<span id="single" class="hoverset" onclick="Singleplayer();makeTable(0);">Singleplayer</span><br>
+			<span id="multi" class="hoverset" onclick="Multiplayer()">Multiplayer</span><br>
+			<span id="scores" class="hoverset" onclick="Scoreboard()">Scores</span><br>
+			<span id="set" class="hoverset" onclick="Settings()">Settings</span><br>
+			<span id="help" class="hoverset" onclick="Instructions()">Instructions</span><br>
+			</b>
+		</div>
+	
+		<!-- Singleplayer -->
+
+		<div id="singleplayer" class="boxgrande">
+			<h3>Tabuleiro de jogo</h3>
+			<div id="connect4"></div>
+			<button id="help22" class="button2" onclick="Instructions2()"> Instructions </button>
+			<button id="sair" class="button" value="Back" onclick="QuitGame();cleanTable();">Desistir</button>
+		</div>
+
+		<!-- Singleplayer botoes extra -->
+
+		<div id="desiste" class="buttonleave" style="display:none;" onclick="QuitGame();cleanTable();">Desistir</div>
+
+		<div id="vez" class="vezz" style="display:none;"> </div>
+
+		<!-- Multiplayer -->
+
+		<div id= "multiplayer" class="boxpequena">
+			<h3>Login</h3>
+  				<label for="uname" ><b>Username:</b></label>
+  				<input type="text" placeholder="Type Username" id="uname" required><br>
+   				<label for="psw"><b>Password:</b></label>
+   				<input type="password" placeholder="Type Password" id="psw" required><br>
+    			<button type="button" onclick="register()"> Register</button>
+   				<button class="button3" value="Back" onclick="GoBack3();">Back</button>
+		</div>
+
+		<!-- Join Menu -->
+
+		<div id ="menujoin" class="boxpequena">
+			<h3>Welcome</h3>
+				<label for="ugroup" ><b>Group:</b></label>
+				<input type="text" placeholder="Type Group" id="ugroup" required><br>
+				<button type="button" value="Start" onclick="join();">Start</button>
+				<button class="button3" value="Logout" onclick="GoBack5()">Back</button>
+		</div>
+
+		<!-- Loading -->
+
+		<div id = "loading" class="boxpequena">
+			<h3> Waiting for an opponent... </h3>
+			
+		</div>
+
+		<!-- Scores -->
+
+		<div id="scoreboard" class="boxpequena">
+			<h2>Score Board</h2>
+			<table>
+				<tr>
+					<th>Board</th>
+					<th id="user1">Player</th>
+					<th id="user2">CPU</th>
+				</tr>
+
+				<tr>
+					<td>4x5</td>
+					<td id="u4">0</td>
+					<td id="b4">0</td>
+				</tr>
+
+				<tr>
+					<td>5x6</td>
+					<td id="u5">0</td>
+					<td id="b5">0</td>
+				</tr>
+
+				<tr>
+					<td>6x7</td>
+					<td id="u6">0</td>
+					<td id="b6">0</td>
+				</tr>
+
+				<tr>
+					<td>7x8</td>
+					<td id="u7">0</td>
+					<td id="b7">0</td>
+
+			</table>
+			<br>
+			<button id="sair2" class="button" value="Back" onclick="GoBack2();"> Back </button> 
+
+			<button id="help2" class="button2" onclick="OnlineScores()">Online Scores</button>
+		</div>
+
+		<!-- Online Scores -->
+
+		<div id="onlscore" class="boxpequena">
+			<h2>Online Score Board</h2>
+			<table id="onl">	
+			</table>
+			<button id="sair3" class="button3" value="Back" onclick="GoBack6();">Back</button>
+		</div>	
+
+		<!-- Settings -->
+
+		<div id="settings" class="boxpequena">
+
+			<div class="settingsboard">
+				<h5>Choose the type of Board</h5>
+
+				<label class="container">7x8
+					<input type="radio" name="radio" id="7x8">
+  					<span class="checkmark"></span>
+				</label>
+
+				<label class="container">6x7(Default)
+ 	 				<input type="radio" checked="checked" name="radio" id="6x7">
+					<span class="checkmark"></span>
+				</label>
+		
+				<label class="container">5x6
+					<input type="radio" name="radio" id="5x6">
+					<span class="checkmark"></span>
+				</label>
+
+				<label class="container">4x5
+					<input type="radio" name="radio" id="4x5">
+					<span class="checkmark"></span>
+				</label>
+			</div>
+
+			<div class="settingsfirst">
+				<h5>Who goes first?</h5>
+
+				<label class="container">Human
+					<input type="radio" name="radio2" id="human" checked="checked">
+  					<span class="checkmark"></span>
+				</label>
+
+				<label class="container">CPU
+ 	 				<input type="radio" name="radio2" id="cpu">
+					<span class="checkmark"></span>
+				</label>	
+
+				<button class="button" value="Back" onclick="GoBack4();"> Back </button>
+				<button class="button2" value="Back" onclick="settings();"> Save Settings </button>
+			</div>
+		</div>
+
+
+		<!-- Instructions -->
+
+		<div id="instructions" class="boxpequena">
+			<h3>Regras do 4 em linha</h3>
+			<p>O quatro em linha joga-se numa grelha (geralmente 7 x 6) colocada na vertical. As peças colocadas numa das aberturas no topo da grelha caiem ao longo de calhas e ocupam a primeira posição livre, seja no fundo da grelha ou sobre outra peça. Cada jogador joga com peças de cor diferente e alternadamente coloca uma peça numa das calhas ainda não completamente preenchidas. Ganha o primeiro jogador que conseguir colocar 4 peças da sua cor alinhadas, na vertical, horizontal ou diagonal.</p>
+			<button class="button3" value="Back" onclick="GoBack();"> Back </button>
+		</div>
+
+		<div id="instructions2" class="boxpequena2">
+			<h3>Regras do 4 em linha</h3>
+			<p>O quatro em linha joga-se numa grelha (geralmente 7 x 6) colocada na vertical. As peças colocadas numa das aberturas no topo da grelha caiem ao longo de calhas e ocupam a primeira posição livre, seja no fundo da grelha ou sobre outra peça. Cada jogador joga com peças de cor diferente e alternadamente coloca uma peça numa das calhas ainda não completamente preenchidas. Ganha o primeiro jogador que conseguir colocar 4 peças da sua cor alinhadas, na vertical, horizontal ou diagonal.</p>
+			<button class="button3" value="Back" onclick="BacktoGame()"> Back </button>
+		</div>
+
+	<!-- </div> -->
+
+	<br>
+</body>
+</html>	
